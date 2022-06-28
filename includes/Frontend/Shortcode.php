@@ -12,7 +12,7 @@ class Shortcode
      */
     function __construct()
     {
-        add_shortcode('contact-code', [$this, 'render_shortcode']);
+        add_shortcode( 'contact-code', [$this, 'render_shortcode'] );
     }
 
     public function loadAssets()
@@ -31,29 +31,29 @@ class Shortcode
      *
      * @return string
      */
-    public function render_shortcode($atts = [], $content = '')
+    public function render_shortcode( $atts = [], $content = '' )
     {
 
         $this->loadAssets();
 
         global $wpdb;
-        $atts = shortcode_atts(array(
+        $atts = shortcode_atts( array(
             'id' => ''
-        ), $atts);
+        ), $atts );
         $id = $atts['id'];
 
-        if (!empty($atts['id'])) {
+        if ( !empty( $atts['id'] ) ) {
 
-            $items = vwp_get_contacts_by_id($id);
-            return $this->renderAttributesBasis($items);
+            $items = vwp_get_contacts_by_id( $id );
+            return $this->renderAttributesBasis( $items );
         } else {
-            $items = vwp_get_all_contacts($atts);
-            return $this->renderWithoutAttributes($items);
+            $items = vwp_get_all_contacts( $atts );
+            return $this->renderWithoutAttributes( $items );
            
         }
     }
 
-    public function renderAttributesBasis($items)
+    public function renderAttributesBasis( $items )
     {
 
         ob_start();
@@ -62,7 +62,7 @@ class Shortcode
         return $content;
     }
 
-    public function renderWithoutAttributes($items)
+    public function renderWithoutAttributes( $items )
     {
         ob_start();
         include_once VWP_CONTACTS_PATH . '/includes/views/AttributeRender.php';

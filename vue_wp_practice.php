@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: WP VUE Practice
+ * Plugin Name: Contact Manager
  * Plugin URI: https://developer.wordpress.org/plugins/plugin-basics/header-requirements/
  * Description: This is a awesome plugin!
  * Version: 1.0.0
@@ -30,11 +30,11 @@ You should have received a copy of the GNU General Public License
 along with Awesome goal tracker. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
 
-if (!defined('ABSPATH')) {
+if ( !defined( 'ABSPATH' ) ) {
   exit;
 }
 
-if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
   require_once __DIR__ . '/vendor/autoload.php';
 }
 
@@ -51,9 +51,9 @@ final class Vue_Wp_practice
   public function __construct()
   {
     $this->plugin_constants();
-    register_activation_hook(__FILE__, [$this, 'activate']);
-    register_deactivation_hook(__FILE__, [$this, 'deactivate']);
-    add_action('plugins_loaded', [$this, 'init_plugin']);
+    register_activation_hook( __FILE__, [$this, 'activate'] );
+    register_deactivation_hook( __FILE__, [$this, 'deactivate'] );
+    add_action( 'plugins_loaded', [$this, 'init_plugin'] );
   }
 
   /**
@@ -62,11 +62,11 @@ final class Vue_Wp_practice
    */
   public function plugin_constants()
   {
-    define('VWP_VERSION', self::VERSION);
-    define('VWP_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
-    define('VWP_PLUGIN_URL', trailingslashit(plugins_url('', __FILE__)));
-    define('VWP_ASSETS', VWP_PLUGIN_URL . '/assets');
-    define('VWP_CONTACTS_BASE_DIR', plugin_dir_url( __FILE__ ) );
+    define( 'VWP_VERSION', self::VERSION );
+    define( 'VWP_PLUGIN_PATH', trailingslashit( plugin_dir_path(__FILE__) ) );
+    define( 'VWP_PLUGIN_URL', trailingslashit( plugins_url('', __FILE__) ) );
+    define( 'VWP_ASSETS', VWP_PLUGIN_URL . '/assets' );
+    define( 'VWP_CONTACTS_BASE_DIR', plugin_dir_url( __FILE__ ) );
     define( 'VWP_CONTACTS_PATH', __DIR__ );
     // define('AGT_NONCE', 'b?le*;K7.T2jk_*(+3&[G[xAc8O~Fv)2T/Zk9N:GKBkn$piN0.N%N~X91VbCn@.4');
   }
@@ -79,7 +79,7 @@ final class Vue_Wp_practice
   {
     static $instance = false;
 
-    if (!$instance) {
+    if ( !$instance ) {
       $instance = new self();
     }
 

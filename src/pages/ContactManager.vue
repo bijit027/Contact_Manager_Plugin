@@ -5,6 +5,7 @@
             <p class="h3 text-success fw-bold">Contact Manager
                 <router-link to="/contacts/add" class="btn btn-success btn-sm"> <i class="fa fa-plus-circle"></i> New</router-link>
             </p>
+            <p class="h3 text-success fw-bold float-right">ShortCode: <b>[contact-code id=""]</b> </p>
             <p class="fst-italic">It is a long established fact that a reader will be
                 by the readable content of a page when looking at its layout. The point
                 of using Lorem Ipsum is that it has a more-or-less normal distribution
@@ -106,6 +107,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

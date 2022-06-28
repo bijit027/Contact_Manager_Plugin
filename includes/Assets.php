@@ -6,39 +6,39 @@ class Assets
 {
   function __construct()
   {
-    if (is_admin()) {
-      add_action('admin_enqueue_scripts', [$this, 'register']);
+    if ( is_admin() ) {
+      add_action( 'admin_enqueue_scripts', [$this, 'register'] );
     } else {
-      add_action('wp_enqueue_scripts', [$this, 'register']);
+      add_action( 'wp_enqueue_scripts', [$this, 'register'] );
     }
   }
 
   public function register()
   {
-    $this->register_scripts($this->get_scripts());
-    wp_localize_script('vwp', 'ajax_url', array(
-      'ajaxurl' => admin_url('admin-ajax.php')
-    ));
-     $this->register_styles($this->get_styles());
+    $this->register_scripts( $this->get_scripts() );
+    wp_localize_script( 'vwp', 'ajax_url', array(
+      'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ) );
+     $this->register_styles( $this->get_styles() );
   }
 
-  private function register_scripts($scripts)
+  private function register_scripts( $scripts )
   {
-    foreach ($scripts as $handle => $script) {
-      $deps      = isset($script['deps']) ? $script['deps'] : false;
-      $in_footer = isset($script['in_footer']) ? $script['in_footer'] : false;
-      $version   = isset($script['version']) ? $script['version'] : VWP_VERSION;
-      wp_register_script($handle, $script['src'], $deps, $version, $in_footer);
+    foreach ( $scripts as $handle => $script ) {
+      $deps      = isset( $script['deps'] ) ? $script['deps'] : false;
+      $in_footer = isset( $script['in_footer'] ) ? $script['in_footer'] : false;
+      $version   = isset( $script['version']) ? $script['version'] : VWP_VERSION;
+      wp_register_script( $handle, $script['src'], $deps, $version, $in_footer );
     }
     
   }
 
-  public function register_styles($styles)
+  public function register_styles( $styles )
   {
-    foreach ($styles as $handle => $style) {
-      $deps = isset($style['deps']) ? $style['deps'] : false;
+    foreach ( $styles as $handle => $style ) {
+      $deps = isset( $style['deps'] ) ? $style['deps'] : false;
 
-      wp_register_style($handle, $style['src'], $deps, VWP_VERSION);
+      wp_register_style( $handle, $style['src'], $deps, VWP_VERSION );
     }
   }
 
@@ -46,9 +46,9 @@ class Assets
   {
     return [
       'vwp-admin-script' => [
-        'src' => VWP_ASSETS . '/admin/admin.js',
+        'src'       => VWP_ASSETS . '/admin/admin.js',
         'deps'      => null,
-        'version' => filemtime(VWP_PLUGIN_PATH . 'assets/admin/admin.js'),
+        'version'   => filemtime(VWP_PLUGIN_PATH . 'assets/admin/admin.js'),
         'in_footer' => true
       ],
     ];

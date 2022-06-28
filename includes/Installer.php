@@ -16,11 +16,11 @@ class Installer
 
   public function add_version()
   {
-    $is_installed = get_option('vwp_is_installed');
-    if (!$is_installed) {
-      update_option('vwp_is_installed', time());
+    $is_installed = get_option( 'vwp_is_installed' );
+    if ( !$is_installed ) {
+      update_option( 'vwp_is_installed', time() );
     }
-    update_option('vwp_is_installed', VWP_VERSION);
+    update_option( 'vwp_is_installed', VWP_VERSION );
   }
 
   public function create_contacts_table()
@@ -40,10 +40,10 @@ class Installer
       PRIMARY KEY(`id`)
       ) $charset_collate;";
 
-    if (!function_exists('dbDelta')) {
-      require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    if ( !function_exists( 'dbDelta' ) ) {
+      require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
     }
 
-    dbDelta($sql);
+    dbDelta( $sql );
   }
 }

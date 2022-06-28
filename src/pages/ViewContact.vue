@@ -15,7 +15,7 @@
 </div>
 
 <div class="container">
-    <div class="row align-items-center" >
+    <div class="row align-items-center">
         <div class="col-md-4" v-for="contact of contacts" :key="contact">
             <img :src="contact.photo" alt="" class="contact-img-big">
         </div>
@@ -47,7 +47,6 @@
         </div>
     </div>
 </div>
-
 </template>
 
 <script>
@@ -64,7 +63,7 @@ export default {
     },
     mounted() {
         const that = this;
-          $.ajax({
+        $.ajax({
             type: "POST",
             url: ajax_url.ajaxurl,
             dataType: 'json',
@@ -72,16 +71,16 @@ export default {
                 action: "vwp_get_single_data",
                 id: that.contactId
             },
-            success: function(data) {
+            success: function (data) {
                 //that.allLists = data.data;
                 that.contacts = data.data;
                 console.log(data);
             }
-            });
+        });
     },
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>
