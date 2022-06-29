@@ -5,12 +5,16 @@
             <p class="h3 text-success fw-bold">Contact Manager
                 <router-link to="/contacts/add" class="btn btn-success btn-sm"> <i class="fa fa-plus-circle"></i> New</router-link>
             </p>
-            <p class="h3 text-success fw-bold float-right">ShortCode: <b>[contact-code id=""]</b> </p>
             <p class="fst-italic">It is a long established fact that a reader will be
                 by the readable content of a page when looking at its layout. The point
                 of using Lorem Ipsum is that it has a more-or-less normal distribution
                 of letters, as opposed to using 'Content here, content here', making it
                 look like readable English. Many desktop publishing packages and web
+            </p>
+        </div>
+        <div class="col" >
+            <p class="h4 text-primary" style="background-color: white;"> If you want to use shortcode then use the code below <br>
+                => <b>[contact-code id=""]</b>
             </p>
         </div>
     </div>
@@ -22,11 +26,11 @@
             <div class="card my-2 list-group-item-success shadow-lg">
                 <div class="card-body">
                     <div class="row align-item-center">
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <img :src="contact.photo" alt="" class="contact-img" />
                         </div>
-                        <div class="col-sm-7">
-                            <ul>
+                        <div class="col-sm-6">
+                            <ul class="list-group">
                                 <li class="list-group-item">
                                     Name : <span class="fw-bold">{{ contact.name }}</span>
                                 </li>
@@ -101,12 +105,8 @@ export default {
             });
             window.location.reload();
         },
-
     }
-
 }
 </script>
-
 <style>
-
 </style>

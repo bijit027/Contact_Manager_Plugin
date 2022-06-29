@@ -3,10 +3,10 @@
 namespace VWP\Includes;
 
 
-class Frontend{
+class frontend{
 
     function __construct(){
 
-        new Frontend\Shortcode();
+        new frontend\shortcode();
     }
 }

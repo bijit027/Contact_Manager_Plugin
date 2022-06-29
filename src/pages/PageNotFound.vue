@@ -5,7 +5,6 @@
             <h2 class="text-danger">404 Page Not Found</h2>
         </div>
     </div>
-
 </div>
 </template>
 

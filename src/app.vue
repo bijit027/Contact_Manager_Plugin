@@ -1,14 +1,14 @@
 <template>
-
-<NavBar />
-
-<router-view v-slot="{ Component }">
-    <component :is="Component" />
-</router-view>
+<div>
+    <NavBar />
+    <router-view v-slot="{ Component }">
+        <component :is="Component" />
+    </router-view>
+</div>
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue";
+import NavBar from "./components/navBar.vue";
 
 export default {
     data() {

@@ -111,7 +111,6 @@ export default {
                 },
                 success: function (data) {
                     that.mydata = data.data;
-                    console.log(data);
                     that.$router.push({
                         name: "ContactManager"
                     });
@@ -119,7 +118,6 @@ export default {
             });
         }
     },
-
 }
 </script>
 

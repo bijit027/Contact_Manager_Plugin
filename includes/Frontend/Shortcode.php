@@ -5,7 +5,7 @@ namespace VWP\Includes\Frontend;
 /**
  * Shortcode handler class
  */
-class Shortcode
+class shortcode
 {
     /**
      * Initializes the class

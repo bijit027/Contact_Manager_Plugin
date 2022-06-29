@@ -68,14 +68,12 @@ export default {
 
             },
             mydata: ''
-
         }
     },
 
     methods: {
         submitCreate() {
             const that = this;
-
             console.log(ajax_url.ajaxurl);
             $.ajax({
                 type: "POST",

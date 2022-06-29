@@ -20,7 +20,7 @@
             <img :src="contact.photo" alt="" class="contact-img-big">
         </div>
         <div class="col-md-6 " v-for="contact of contacts" :key="contact">
-            <ul>
+            <ul class="list-group">
                 <li class="list-group-item">
                     Name : <span class="fw-bold">{{ contact.name }}</span>
                 </li>
@@ -58,7 +58,6 @@ export default {
         return {
             contactId: this.$route.params.contactId,
             contacts: [],
-
         }
     },
     mounted() {
@@ -72,9 +71,7 @@ export default {
                 id: that.contactId
             },
             success: function (data) {
-                //that.allLists = data.data;
                 that.contacts = data.data;
-                console.log(data);
             }
         });
     },

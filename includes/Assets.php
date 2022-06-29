@@ -2,7 +2,7 @@
 
 namespace VWP\Includes;
 
-class Assets
+class assets
 {
   function __construct()
   {
@@ -59,8 +59,7 @@ class Assets
     return [
       'fontawsome' => [
         'src' => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
-       
-      ]
+      ],
     ];
   }
 }

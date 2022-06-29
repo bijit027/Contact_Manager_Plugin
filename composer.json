@@ -6,7 +6,7 @@
         "psr-4": {
           "VWP\\Includes\\": "includes/"
         },
-        "files":[ "includes/Functions.php" ]
+        "files":[ "includes/functions.php" ]
       },
     "authors": [
         {

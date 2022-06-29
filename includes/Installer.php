@@ -2,7 +2,7 @@
 
 namespace VWP\Includes;
 
-class Installer
+class installer
 {
   function __construct()
   {

@@ -92,7 +92,7 @@ final class Vue_Wp_practice
    */
   public function activate()
   {
-    $installer = new VWP\Includes\Installer();
+    $installer = new VWP\includes\installer();
     $installer->run();
   }
 
@@ -111,13 +111,13 @@ final class Vue_Wp_practice
    */
   public function init_plugin()
   {
-    new \VWP\Includes\Assets();
-    new \VWP\Includes\Models();
+    new \VWP\Includes\assets();
+    new \VWP\Includes\models();
     if (is_admin()) {
-      new \VWP\Includes\Admin();
+      new \VWP\Includes\admin();
     } else {
 
-      new \VWP\Includes\Frontend();
+      new \VWP\Includes\frontend();
 
     }
   }

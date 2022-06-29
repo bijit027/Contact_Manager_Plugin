@@ -1,10 +1,10 @@
 import { createWebHashHistory, createRouter } from "vue-router";
-import Home from "../pages/Home.vue";
-import ContactManager from "../pages/ContactManager.vue";
-import AddContact from "../pages/AddContact";
-import EditContact from "../pages/EditContact";
-import ViewContact from "../pages/ViewContact.vue";
-import PageNotFound from "../pages/PageNotFound";
+import Home from "../pages/home.vue";
+import ContactManager from "../pages/contactManager.vue";
+import AddContact from "../pages/addContact";
+import EditContact from "../pages/editContact";
+import ViewContact from "../pages/viewContact.vue";
+import PageNotFound from "../pages/pageNotFound.vue";
 
 const routes = [
   {

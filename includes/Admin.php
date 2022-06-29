@@ -2,7 +2,7 @@
 
 namespace VWP\Includes;
 
-class Admin
+class admin
 {
   function __construct()
   {

@@ -3,7 +3,7 @@
 namespace VWP\Includes;
 
 
-class Models
+class models
 {
 
   function __construct()
@@ -83,8 +83,6 @@ class Models
 
     die();
   }
-
-
 
   // Get Single Data
   public function vwp_get_single_data()

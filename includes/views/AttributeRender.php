@@ -9,7 +9,7 @@
 <body>
 <div class='attribute' >
     <table id='contacts'>
-    
+     <caption>Contact List</caption>
         <tr>
           <th>ID</th>
           <th>Name</th>
