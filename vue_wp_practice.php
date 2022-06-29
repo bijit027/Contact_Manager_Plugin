@@ -92,7 +92,7 @@ final class Vue_Wp_practice
    */
   public function activate()
   {
-    $installer = new VWP\Includes\installer();
+    $installer = new VWP\includes\installer();
     $installer->run();
   }
 
