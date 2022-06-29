@@ -68,7 +68,6 @@ final class Vue_Wp_practice
     define( 'VWP_ASSETS', VWP_PLUGIN_URL . '/assets' );
     define( 'VWP_CONTACTS_BASE_DIR', plugin_dir_url( __FILE__ ) );
     define( 'VWP_CONTACTS_PATH', __DIR__ );
-    // define('AGT_NONCE', 'b?le*;K7.T2jk_*(+3&[G[xAc8O~Fv)2T/Zk9N:GKBkn$piN0.N%N~X91VbCn@.4');
   }
 
   /**
@@ -92,7 +91,7 @@ final class Vue_Wp_practice
    */
   public function activate()
   {
-    $installer = new VWP\includes\installer();
+    $installer = new VWP\Includes\installer();
     $installer->run();
   }
 
