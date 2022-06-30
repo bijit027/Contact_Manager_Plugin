@@ -86,7 +86,7 @@ export default {
             },
             success: function (data) {
                 that.contacts = data.data;
-                console.log(data);
+                
             }
         });
     },
