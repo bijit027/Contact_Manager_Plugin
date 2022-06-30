@@ -13,7 +13,9 @@
             </p>
         </div>
         <div class="col" >
-            <p class="h4 text-primary" style="background-color: white;"> If you want to use shortcode then use the code below <br>
+            <p class="h6 text-primary" style="background-color: white;"> If you want to use shortcode then use the code below <br><br>
+            for all contacts use: <br> => <b>[contact-code]</b> <br><br>
+            for id based contact: <br>
                 => <b>[contact-code id=""]</b>
             </p>
         </div>
