@@ -88,7 +88,6 @@ export default {
             },
             success: function (data) {
                 that.contact = data.data[0];
-                console.log(data);
             }
         });
     },

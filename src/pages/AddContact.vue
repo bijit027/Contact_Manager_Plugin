@@ -91,15 +91,12 @@ export default {
                     wpsfb_nonce: ajax_url.wpsfb_nonce,
                 },
                 success: function (data) {
-                    console.log("success accessed")
-                    that.mydata = data.data;
-                    if (data) {
-                        console.log("data exists")
+                   that.mydata = data.data;
+                    if (data) {       
                         that.$router.push({
                             name: "ContactManager"
                         });
                     }
-                    console.log("data does not exist")
                     that.$router.push({
                         name: "ContactManager"
                     });
