@@ -23,15 +23,54 @@ class models
   {
     wp_enqueue_script( 'vwp', VWP_ASSETS . 'js/contatc-form.js', null, VWP_VERSION, true );
     wp_localize_script( 'vwp', 'ajax_url', array(
-      'ajaxurl' => admin_url( 'admin-ajax.php' )
+      'ajaxurl' => admin_url( 'admin-ajax.php' ),
+      'wpsfb_nonce' => wp_create_nonce('wpsfb_ajax_nonce')
     ));
   }
 
 
   public function vwp_insert_contact_table()
   {
+    if (!wp_verify_nonce($_POST['wpsfb_nonce'], 'wpsfb_ajax_nonce')) {
+      return wp_send_json_error('Busted! Please login!', 400);
+    }
 
     global $wpdb;
+
+    if (!empty($_POST['name'])) {
+      $title = sanitize_text_field($_POST['name']);
+    } else {
+      return wp_send_json_error("please enter name", 400);
+    }
+
+    if (!empty($_POST['photo'])) {
+      $details = sanitize_text_field($_POST['photo']);
+    } else {
+      return wp_send_json_error("please enter img url", 400);
+    }
+
+    if (!empty($_POST['email'])) {
+      $details = sanitize_text_field($_POST['email']);
+    } else {
+      return wp_send_json_error("please enter email", 400);
+    }
+    if (!empty($_POST['mobile'])) {
+      $details = sanitize_text_field($_POST['mobile']);
+    } else {
+      return wp_send_json_error("please enter mobile", 400);
+    }
+    if (!empty($_POST['company'])) {
+      $details = sanitize_text_field($_POST['company']);
+    } else {
+      return wp_send_json_error("please enter company", 400);
+    }
+    if (!empty($_POST['title'])) {
+      $details = sanitize_text_field($_POST['title']);
+    } else {
+      return wp_send_json_error("please enter title", 400);
+    }
+
+   
 
     $defaults = [
 
@@ -108,7 +147,45 @@ class models
    */
   public function vwp_update_contact_list()
   {
+    if (!wp_verify_nonce($_POST['wpsfb_nonce'], 'wpsfb_ajax_nonce')) {
+      return wp_send_json_error('Busted! Please login!', 400);
+    }
+
     global $wpdb;
+
+    if (!empty($_POST['name'])) {
+      $title = sanitize_text_field($_POST['name']);
+    } else {
+      return wp_send_json_error("please enter name", 400);
+    }
+
+    if (!empty($_POST['photo'])) {
+      $details = sanitize_text_field($_POST['photo']);
+    } else {
+      return wp_send_json_error("please enter img url", 400);
+    }
+
+    if (!empty($_POST['email'])) {
+      $details = sanitize_text_field($_POST['email']);
+    } else {
+      return wp_send_json_error("please enter email", 400);
+    }
+    if (!empty($_POST['mobile'])) {
+      $details = sanitize_text_field($_POST['mobile']);
+    } else {
+      return wp_send_json_error("please enter mobile", 400);
+    }
+    if (!empty($_POST['company'])) {
+      $details = sanitize_text_field($_POST['company']);
+    } else {
+      return wp_send_json_error("please enter company", 400);
+    }
+    if (!empty($_POST['title'])) {
+      $details = sanitize_text_field($_POST['title']);
+    } else {
+      return wp_send_json_error("please enter title", 400);
+    }
+    
     $id           = sanitize_text_field( ( isset( $_POST['id'] ) ? $_POST['id'] : '' ) );
     $name         = sanitize_text_field( ( isset( $_POST['name'] ) ? $_POST['name'] : '' ) );
     $photo        = sanitize_text_field( ( isset( $_POST['photo'] ) ? $_POST['photo'] : '' ) );
@@ -148,7 +225,12 @@ class models
   public function vwp_delete_contact()
   {
 
+    if (!wp_verify_nonce($_POST['wpsfb_nonce'], 'wpsfb_ajax_nonce')) {
+      return wp_send_json_error('Busted! Please login!', 400);
+    }
+
     global $wpdb;
+    
     $table_name = $wpdb->prefix . 'contacts';
     $id         = isset( $_POST['id'] ) ? $_POST['id'] : '';
 

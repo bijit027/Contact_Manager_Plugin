@@ -1,5 +1,6 @@
 <template>
 <div class="container mt-3">
+    <h2 class="show-error">{{ error }}</h2>
     <div class="row">
         <div class="col">
             <p class="h3 text-success fw-bold">Edit Contact</p>
@@ -18,22 +19,22 @@
         <div class="col-md-4">
             <form @submit.prevent="editCreate()">
                 <div class="mb-2">
-                    <input required v-model="contact.name" type="text" class="form-control" placeholder="name">
+                    <input  v-model="contact.name" type="text" class="form-control" placeholder="name">
                 </div>
                 <div class="mb-2">
-                    <input required v-model="contact.photo" type="text" class="form-control" placeholder="Photo URL">
+                    <input  v-model="contact.photo" type="text" class="form-control" placeholder="Photo URL">
                 </div>
                 <div class="mb-2">
-                    <input required v-model="contact.email" type="email" class="form-control" placeholder="Email">
+                    <input  v-model="contact.email" type="email" class="form-control" placeholder="Email">
                 </div>
                 <div class="mb-2">
-                    <input required v-model="contact.mobile" type="number" class="form-control" placeholder="Mobile">
+                    <input  v-model="contact.mobile" type="number" class="form-control" placeholder="Mobile">
                 </div>
                 <div class="mb-2">
-                    <input required v-model="contact.company" type="text" class="form-control" placeholder="Company">
+                    <input  v-model="contact.company" type="text" class="form-control" placeholder="Company">
                 </div>
                 <div class="mb-2">
-                    <input required v-model="contact.title" type="text" class="form-control" placeholder="Title">
+                    <input  v-model="contact.title" type="text" class="form-control" placeholder="Title">
                 </div>
                 <div class="mb-2">
                     <input type="submit" class="btn btn-success" value="Update">
@@ -69,7 +70,8 @@ export default {
 
             },
             contacts: [],
-            mydata: ''
+            mydata: '',
+            error: '',
 
         }
     },
@@ -107,14 +109,18 @@ export default {
                     email: that.contact.email,
                     mobile: that.contact.mobile,
                     company: that.contact.company,
-                    title: that.contact.title
+                    title: that.contact.title,
+                    wpsfb_nonce: ajax_url.wpsfb_nonce,
                 },
                 success: function (data) {
                     that.mydata = data.data;
                     that.$router.push({
                         name: "ContactManager"
                     });
-                }
+                },
+                error: function (error) {
+                    that.error = error.responseJSON.data;
+                },
             });
         }
     },

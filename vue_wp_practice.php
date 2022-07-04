@@ -115,9 +115,7 @@ final class Vue_Wp_practice
     if (is_admin()) {
       new \VWP\Includes\admin();
     } else {
-
       new \VWP\Includes\frontend();
-
     }
   }
 }

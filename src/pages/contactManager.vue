@@ -12,8 +12,10 @@
                 look like readable English. Many desktop publishing packages and web
             </p>
         </div>
-        <div class="col" >
-            <p class="h4 text-primary" style="background-color: white;"> If you want to use shortcode then use the code below <br>
+        <div class="col">
+            <p class="h6 text-primary" style="background-color: white;"> If you want to use shortcode then use the code below <br><br>
+                for all contacts use: <br> => <b>[contact-code]</b> <br><br>
+                for id based contact: <br>
                 => <b>[contact-code id=""]</b>
             </p>
         </div>
@@ -71,7 +73,8 @@ export default {
         return {
             loading: false,
             contacts: [],
-            errorMessage: null
+            errorMessage: null,
+
         }
     },
 
@@ -100,7 +103,8 @@ export default {
                 dataType: 'json',
                 data: {
                     action: "vwp_delete_contact",
-                    id: contactID
+                    id: contactID,
+                    wpsfb_nonce: ajax_url.wpsfb_nonce,
                 },
             });
             window.location.reload();
@@ -108,5 +112,6 @@ export default {
     }
 }
 </script>
+
 <style>
 </style>

@@ -14,9 +14,8 @@ function vwp_get_contacts_by_id( $items ){
     return $sql;
     
   }
-  
-  
-  function vwp_get_all_contacts(){
+
+function vwp_get_all_contacts(){
     global $wpdb;
     $sql = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}contacts");
     return $sql;
