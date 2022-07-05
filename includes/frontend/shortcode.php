@@ -57,7 +57,7 @@ class shortcode
     {
 
         ob_start();
-        include_once VWP_CONTACTS_PATH . '/includes/views/AttributeRender.php';
+        include_once VWP_CONTACTS_PATH . '/includes/views/attributeRender.php';
         $content = ob_get_clean();
         return $content;
     }
@@ -65,7 +65,7 @@ class shortcode
     public function renderWithoutAttributes( $items )
     {
         ob_start();
-        include_once VWP_CONTACTS_PATH . '/includes/views/AttributeRender.php';
+        include_once VWP_CONTACTS_PATH . '/includes/views/attributeRender.php';
         $content = ob_get_clean();
         return $content;
     }
