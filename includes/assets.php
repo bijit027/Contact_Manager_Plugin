@@ -60,6 +60,9 @@ class assets
       'fontawsome' => [
         'src' => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
       ],
+       'bootstrap' => [
+        'src' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css'
+      ]
     ];
   }
 }
