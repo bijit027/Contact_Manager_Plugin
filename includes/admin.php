@@ -37,6 +37,7 @@ class admin
   public function enqueue_scripts()
   {
     wp_enqueue_style( 'fontawsome' );
+    wp_enqueue_style( 'bootstrap' );
     wp_enqueue_script( 'vwp-admin-script' );
   }
 }
