@@ -1,7 +1,5 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import app from "./app.vue";
 import router from "./router";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
-createApp(App).use(router).mount("#vwp-admin-app");
+createApp(app).use(router).mount("#vwp-admin-app");
