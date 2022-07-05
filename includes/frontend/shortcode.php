@@ -1,6 +1,6 @@
 <?php
 
-namespace VWP\Includes\Frontend;
+namespace VWP\Includes\frontend;
 
 /**
  * Shortcode handler class
