@@ -208,10 +208,7 @@ class models
       ),
       $where
     );
-
-//     if ( !$updated ) {
-//       return wp_send_json_error( "Error while posting data", 500 );
-//     }
+    
     return wp_send_json_success( [
       'message' => __( "Successfully update data", "textdomain" )
     ], 200 );
