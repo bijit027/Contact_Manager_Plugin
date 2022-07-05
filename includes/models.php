@@ -21,7 +21,7 @@ class models
 
   public function vwp_admin_scripts()
   {
-    wp_enqueue_script( 'vwp', VWP_ASSETS . 'js/contatc-form.js', null, VWP_VERSION, true );
+    wp_enqueue_script( 'vwp', VWP_ASSETS . '/js/contatc-form.js', null, VWP_VERSION, true );
     wp_localize_script( 'vwp', 'ajax_url', array(
       'ajaxurl' => admin_url( 'admin-ajax.php' ),
       'wpsfb_nonce' => wp_create_nonce('wpsfb_ajax_nonce')
